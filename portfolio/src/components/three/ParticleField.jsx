@@ -6,7 +6,7 @@ import * as THREE from 'three';
  * Animated particle field with glowing orange particles
  * Creates a futuristic, ethereal atmosphere
  */
-export function ParticleField({ count = 500, color = '#ff6b00' }) {
+export function ParticleField({ count = 360, color = '#ff6b00' }) {
   const mesh = useRef();
   const light = useRef();
 
@@ -81,23 +81,23 @@ export function ParticleField({ count = 500, color = '#ff6b00' }) {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.15}
+          size={0.12}
           color={color}
           transparent
-          opacity={0.8}
+          opacity={0.45}
           sizeAttenuation
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
       </points>
       
-      {/* Ambient glow light */}
+      {/* Soft ambient glow light */}
       <pointLight
         ref={light}
         position={[0, 0, 0]}
         color={color}
-        intensity={0.5}
-        distance={50}
+        intensity={0.25}
+        distance={40}
       />
     </group>
   );

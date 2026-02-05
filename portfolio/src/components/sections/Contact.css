@@ -4,7 +4,7 @@
 
 .contact {
   min-height: 80vh;
-  padding: var(--space-24) 0 var(--space-12);
+  padding: var(--section-padding-top) 0 var(--space-8);
   position: relative;
   overflow: hidden;
 }
@@ -17,11 +17,83 @@
 
 /* Header */
 .contact__header {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
+  text-align: center;
 }
 
 .contact__header .section-subtitle {
   margin: 0 auto;
+}
+
+/* Contact Info Grid - below header, equal-width items in a row */
+.contact__info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+  padding: var(--space-4) var(--space-4);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.contact__info-item:hover {
+  border-color: var(--orange-500);
+  box-shadow: var(--glow-orange-sm);
+  transform: translateY(-2px);
+}
+
+.contact__info-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.contact__info-item h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.contact__info-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.contact__info-item p,
+.contact__info-item a {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin: 0;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  text-align: center;
+}
+
+.contact__info-item a:hover {
+  color: var(--orange-400);
 }
 
 /* Email CTA */
@@ -187,7 +259,18 @@
 
 @media (max-width: 768px) {
   .contact {
-    padding: var(--space-16) 0 var(--space-8);
+    padding: var(--space-12) 0 var(--space-6);
+  }
+  
+  .contact__info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact__info-item {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
   }
   
   .contact__email-link {

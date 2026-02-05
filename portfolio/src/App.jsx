@@ -2,6 +2,8 @@ import { useCallback } from 'react';
 import { Scene } from './components/three/Scene';
 import { Navigation } from './components/ui/Navigation';
 import { Hero } from './components/sections/Hero';
+import { Skills } from './components/sections/Skills';
+import { Resume } from './components/sections/Resume';
 import { Projects } from './components/sections/Projects';
 import { FunSection } from './components/sections/FunSection';
 import { Contact } from './components/sections/Contact';
@@ -49,6 +51,8 @@ import './styles/global.css';
 function App() {
   const { scrollProgress, activeSection } = useScrollProgress([
     'hero',
+    'skills',
+    'resume',
     'projects', 
     'fun',
     'contact'
@@ -77,6 +81,12 @@ function App() {
       <main>
         {/* Hero / Intro Section */}
         <Hero onNavigate={handleNavigate} />
+        
+        {/* Skills Section */}
+        <Skills />
+        
+        {/* Resume Section */}
+        <Resume />
         
         {/* Projects Section */}
         <Projects />

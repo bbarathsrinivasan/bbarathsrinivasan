@@ -4,7 +4,7 @@
 
 .projects {
   min-height: 100vh;
-  padding: var(--space-24) 0;
+  padding: var(--section-padding-top) 0 var(--section-padding);
 }
 
 /* Header */
@@ -46,13 +46,19 @@
 }
 
 .filter-chip--active {
-  color: var(--bg-darkest);
-  background: var(--gradient-orange);
-  border-color: transparent;
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  border: 2px solid var(--orange-400);
 }
 
 .filter-chip--active:hover {
-  color: var(--bg-darkest);
+  color: var(--text-primary);
+  background: var(--glass-bg-hover);
+  border-color: var(--orange-400);
+}
+
+.filter-chip--active .filter-chip__indicator {
+  display: none;
 }
 
 .filter-chip__icon {
@@ -116,7 +122,7 @@
 
 @media (max-width: 768px) {
   .projects {
-    padding: var(--space-16) 0;
+    padding: var(--space-8) 0 var(--space-12);
   }
   
   .projects__filters {

@@ -1,70 +1,64 @@
 /* ===================
-   HERO SECTION STYLES
+   HERO - Intro + tagline + buttons outside; terminal (about me + typing) inside
    =================== */
 
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: var(--space-20);
+  padding: var(--space-8) var(--space-6) var(--space-8);
 }
 
 .hero__content {
+  width: 100%;
+  max-width: 720px;
   text-align: center;
-  max-width: 900px;
   z-index: 10;
+  margin-top: var(--space-6);
 }
 
-/* Greeting text */
-.hero__greeting {
-  display: block;
+/* ----- Outside: Intro — "Hello, World!" on first row, "I'm Barath" on next row ----- */
+.hero__name {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-4);
+}
+
+.hero__name--inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15em;
+}
+
+.hero__name .hero__greeting {
   font-family: var(--font-mono);
-  font-size: var(--text-lg);
+  font-size: 1em;
+  font-weight: 500;
   color: var(--orange-400);
   letter-spacing: var(--tracking-wider);
-  margin-bottom: var(--space-4);
   text-transform: uppercase;
 }
 
-/* Name styling */
-.hero__name {
-  font-family: var(--font-display);
-  font-size: var(--text-6xl);
-  font-weight: 700;
-  line-height: var(--leading-none);
-  margin-bottom: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+.hero__name-line {
+  white-space: nowrap;
 }
 
-.hero__name-first {
-  color: var(--text-primary);
-}
-
-.hero__name-last {
+.hero__name-text {
   background: var(--gradient-orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: none;
   filter: drop-shadow(0 0 30px var(--neon-orange-glow));
 }
 
-/* Role */
-.hero__role {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-6);
-  letter-spacing: var(--tracking-wide);
-}
-
-/* Rotating tagline */
+/* ----- Outside: Tagline < ... /> ----- */
 .hero__tagline-wrapper {
   display: flex;
   align-items: center;
@@ -82,26 +76,17 @@
 
 .hero__tagline {
   color: var(--text-secondary);
-  min-width: 300px;
+  min-width: 200px;
   text-align: center;
 }
 
-/* Bio */
-.hero__bio {
-  font-size: var(--text-lg);
-  color: var(--text-secondary);
-  line-height: var(--leading-relaxed);
-  max-width: 60ch;
-  margin: 0 auto var(--space-10);
-}
-
-/* CTA buttons */
+/* ----- Outside: CTA buttons ----- */
 .hero__cta-group {
   display: flex;
   gap: var(--space-4);
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-10);
 }
 
 .hero__cta {
@@ -113,7 +98,97 @@
   font-size: 1.2em;
 }
 
-/* Scroll indicator */
+/* ----- Terminal: code-style about me + typing, fixed height from start ----- */
+.hero__code-block {
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+  line-height: 1.55;
+  text-align: left;
+  background: rgba(6, 12, 24, 0.88);
+  border: 1px solid rgba(255, 152, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  margin-bottom: var(--space-10);
+}
+
+/* Fixed height from first paint; scroll if content overflows */
+.hero__code-block--fixed .hero__terminal-body {
+  min-height: 420px;
+  height: 420px;
+  overflow: auto;
+}
+
+.hero__code-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 152, 0, 0.12);
+}
+
+.hero__code-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 152, 0, 0.35);
+}
+
+.hero__code-dot:nth-child(2) {
+  background: rgba(255, 152, 0, 0.2);
+}
+
+.hero__code-dot:nth-child(3) {
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.hero__code-filename {
+  margin-left: 8px;
+  font-size: 0.8em;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+}
+
+.hero__terminal-body {
+  padding: var(--space-4) var(--space-5);
+}
+
+.hero__terminal-content {
+  display: block;
+  word-break: break-word;
+}
+
+.hero__terminal-prompt {
+  color: var(--orange-400);
+  margin-right: 0.25em;
+}
+
+.hero__terminal-text {
+  color: var(--text-secondary);
+}
+
+.hero__terminal-text--pre {
+  white-space: pre-wrap;
+}
+
+.hero__terminal-cursor {
+  display: inline-block;
+  width: 0.45em;
+  height: 1.05em;
+  margin-left: 2px;
+  background: var(--orange-400);
+  vertical-align: text-bottom;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  animation: none;
+}
+
+.hero__terminal-cursor--on {
+  opacity: 1;
+}
+
+/* ----- Scroll indicator ----- */
 .hero__scroll-indicator {
   display: flex;
   flex-direction: column;
@@ -139,79 +214,76 @@
   opacity: 0.6;
 }
 
-/* Decorative elements */
+/* Decorative blurs */
 .hero__decoration {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   background: var(--gradient-orange-radial);
-  filter: blur(80px);
-  opacity: 0.3;
+  filter: blur(70px);
+  opacity: 0.25;
   pointer-events: none;
 }
 
 .hero__decoration--left {
-  top: 20%;
-  left: -100px;
+  top: 15%;
+  left: -80px;
 }
 
 .hero__decoration--right {
-  bottom: 20%;
-  right: -100px;
+  bottom: 15%;
+  right: -80px;
 }
 
 /* ===================
-   RESPONSIVE STYLES
+   RESPONSIVE
    =================== */
 
 @media (max-width: 768px) {
   .hero__name {
-    font-size: var(--text-4xl);
+    font-size: var(--text-2xl);
   }
-  
-  .hero__role {
-    font-size: var(--text-xl);
-  }
-  
+
   .hero__tagline-wrapper {
     font-size: var(--text-sm);
   }
-  
+
   .hero__tagline {
-    min-width: 200px;
+    min-width: 160px;
   }
-  
-  .hero__bio {
-    font-size: var(--text-base);
-  }
-  
+
   .hero__cta-group {
     flex-direction: column;
     align-items: center;
+    margin-bottom: var(--space-8);
   }
-  
+
   .hero__cta {
     width: 100%;
     max-width: 280px;
+  }
+
+  .hero__code-block {
+    font-size: 0.8rem;
+  }
+
+  .hero__terminal-body {
+    padding: var(--space-4);
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: var(--space-16);
+    padding-top: var(--space-12);
   }
-  
-  .hero__greeting {
-    font-size: var(--text-base);
-  }
-  
+
   .hero__name {
-    font-size: var(--text-3xl);
+    font-size: var(--text-xl);
   }
-  
+
   .hero__decoration {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 }

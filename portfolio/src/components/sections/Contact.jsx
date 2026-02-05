@@ -70,15 +70,6 @@ export function Contact() {
         </svg>
       ),
     },
-    {
-      name: 'Twitter',
-      url: personalInfo.social.twitter,
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      ),
-    },
   ];
 
   return (
@@ -92,22 +83,33 @@ export function Contact() {
       >
         {/* Header */}
         <motion.div className="contact__header" variants={itemVariants}>
-          <h2 className="section-title">{contactContent.title}</h2>
+          <h2 className="section-title"><code>{contactContent.title}</code></h2>
           <p className="section-subtitle">{contactContent.subtitle}</p>
         </motion.div>
 
-        {/* Email CTA */}
-        <motion.div className="contact__email" variants={itemVariants}>
-          <motion.a 
-            href={`mailto:${personalInfo.social.email}`}
-            className="contact__email-link"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="contact__email-icon">📧</span>
-            <span className="contact__email-text">{personalInfo.social.email}</span>
-            <span className="contact__email-cta">{contactContent.emailCta}</span>
-          </motion.a>
+        {/* Contact Info - below header */}
+        <motion.div className="contact__info-grid" variants={itemVariants}>
+          <div className="contact__info-item">
+            <div className="contact__info-icon">📍</div>
+            <div>
+              <h4>Location:</h4>
+              <p>{contactContent.location}</p>
+            </div>
+          </div>
+          <div className="contact__info-item">
+            <div className="contact__info-icon">✉️</div>
+            <div>
+              <h4>Email:</h4>
+              <a href={`mailto:${contactContent.email}`}>{contactContent.email}</a>
+            </div>
+          </div>
+          <div className="contact__info-item">
+            <div className="contact__info-icon">📞</div>
+            <div>
+              <h4>Call:</h4>
+              <a href={`tel:${contactContent.phone}`}>{contactContent.phone}</a>
+            </div>
+          </div>
         </motion.div>
 
         {/* Social Links */}

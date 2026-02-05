@@ -4,7 +4,7 @@
 
 .fun-section {
   min-height: 100vh;
-  padding: var(--space-24) 0;
+  padding: var(--section-padding-top) 0 var(--section-padding);
   position: relative;
 }
 
@@ -45,17 +45,17 @@
 .fun-section__progress-bar {
   flex: 1;
   height: 8px;
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-full);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .fun-section__progress-fill {
   height: 100%;
   background: var(--gradient-orange);
   border-radius: var(--radius-full);
-  box-shadow: var(--glow-orange-sm);
+  box-shadow: 0 0 8px rgba(253, 122, 36, 0.25);
 }
 
 .fun-section__progress-text {
@@ -70,8 +70,8 @@
 .fun-section__token-field {
   position: relative;
   height: 400px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: radial-gradient(circle at 50% 0%, rgba(253, 122, 36, 0.08), transparent 70%), rgba(10, 10, 10, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-2xl);
   overflow: hidden;
   margin-bottom: var(--space-8);
@@ -98,8 +98,8 @@
   height: 100%;
   background: var(--gradient-orange-radial);
   border-radius: 50%;
-  filter: blur(10px);
-  animation: pulse-glow 2s ease-in-out infinite;
+  filter: blur(6px);
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .fun-token__core {
@@ -145,8 +145,8 @@
   margin: var(--space-12) auto 0;
   padding: var(--space-8);
   text-align: center;
-  border-color: var(--amber);
-  box-shadow: var(--shadow-lg), 0 0 40px rgba(255, 191, 0, 0.2);
+  border-color: rgba(255, 191, 0, 0.6);
+  box-shadow: var(--shadow-md), 0 0 24px rgba(255, 191, 0, 0.18);
 }
 
 .fun-section__secret-badge {

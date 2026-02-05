@@ -13,7 +13,7 @@ export function FunSection() {
   const [gameComplete, setGameComplete] = useState(false);
   const [showSecret, setShowSecret] = useState(false);
   const containerRef = useRef(null);
-  const totalTokens = 5;
+  const totalTokens = 3;
 
   // Generate token positions
   useEffect(() => {
@@ -101,7 +101,7 @@ export function FunSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">{funSectionContent.title}</h2>
+          <h2 className="section-title"><code>{funSectionContent.title}</code></h2>
           <p className="section-subtitle">{funSectionContent.subtitle}</p>
         </motion.header>
 

@@ -6,52 +6,108 @@
  */
 
 export const personalInfo = {
-  name: 'Barath Srinivasan',
+  name: 'Barath Srinivasan Basavaraj',
   firstName: 'Barath',
-  lastName: 'Srinivasan',
-  role: 'Full Stack Developer & Cloud Architect',
+  lastName: 'Srinivasan Basavaraj',
+  role: 'Research Fellow & Software Engineer',
   tagline: 'Compiling dreams into production-ready reality',
   
   // Fun rotating subtitles for hero
   rotatingTitles: [
+    'Research Fellow',
+    'Software Engineer',
+    'AI Safety Researcher',
     'Building the future, one commit at a time',
     'Turning caffeine into code since forever',
-    'Making servers do the heavy lifting',
-    'Debugging reality, deploying solutions',
-    'Cloud whisperer & code conjurer',
   ],
   
   // About section (short version for hero)
-  shortBio: "I'm a developer who believes that great code should be as elegant as it is functional. When I'm not architecting cloud solutions or training neural networks, you'll find me optimizing everything from database queries to my coffee brewing process.",
+  shortBio: "Research Fellow at CMU AI Safety Initiative and Software Engineer with expertise in AI, machine learning, and blockchain. Passionate about AI safety, ethical data solutions, and building secure, user-centered systems.",
+  
+  // Personal details
+  personalDetails: {
+    birthday: '1 Aug 2001',
+    age: 23,
+    website: 'https://firaz-bug.github.io/bbarathsrinivasan/',
+    phone: '(412) 320-5240',
+    city: 'Pittsburgh, Pennsylvania',
+    degree: 'Master of Computational Data Science',
+    email: 'bbarathsrinivasan@cmu.edu',
+    freelance: 'Not Available',
+  },
   
   // Social links
   social: {
     github: 'https://github.com/bbarathsrinivasan',
-    linkedin: 'https://linkedin.com/in/yourprofile',
-    twitter: 'https://twitter.com/yourhandle',
-    email: 'your.email@example.com',
+    linkedin: 'https://www.linkedin.com/in/b-barath-srinivasan-4721b220b/',
+    email: 'bbarathsrinivasan@cmu.edu',
   },
   
   // Resume/CV link (optional)
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/assets/B Barath Srinivasan.pdf',
 };
 
 export const heroContent = {
   greeting: "Hello, World! I'm",
   ctaPrimary: 'View Projects',
   ctaSecondary: 'Contact Me',
+  /** Terminal "about me" — code-style block with typing effect. Use \n for new lines. */
+  terminalAbout: `// TL;DR — the only constant that matters 📌
+tld = "I teach machines better manners, design systems with guardrails, and ship with curiosity + discipline. 🚀🛡️🤖"
+
+// education.patch (applying latest updates 🎓)
+masters = "Pursuing my Master's in Computational Data Science at Carnegie Mellon University, where data, systems, and intelligent decision-making all collide (in a good way)."
+
+// builder.module — no bundler required 🔧
+builder = "I like turning messy, real-world problems into reliable AI products that actually help people."
+
+// ai_safety.guardrails (red-team approved 🛡️)
+ai_safety = "Think of it as teaching powerful models to be smart, secure, and well-behaved."
+
+// personality.vibe (runtime: always on ⚡)
+vibe = "Researcher mindset, builder energy, startup curiosity."
+
+// final.compile() — linking all modules 🚀
+Barath = tld +  masters  + builder  + ai_safety  + vibe`,
+};
+
+export const aboutContent = {
+  title: 'About',
+  subtitle: 'Software Engineer & Entrepreneur.',
+  description: 'Innovative and driven individual with a strong foundation in computer science, AI, and blockchain, seeking to leverage advanced technical expertise and entrepreneurial experience in a dynamic environment. Aspiring to contribute to pioneering developments in AI safety, ethical data solutions, and blockchain technology, while building impactful and user-centered systems that address real-world challenges. I am looking to refine my skills further and expand my knowledge through meaningful opportunities that align with a vision of creating secure and accessible technology for the future.',
+};
+
+export const skillsContent = {
+  title: 'Skills',
+  subtitle: 'Technologies I work with',
+};
+
+export const resumeContent = {
+  title: 'Resume',
+  summary: {
+    name: 'Barath Srinivasan Basavaraj',
+    description: 'Research Fellow at CMU AI Safety Initiative and Software Engineer with expertise in AI, machine learning, and blockchain. Passionate about AI safety, ethical data solutions, and building secure, user-centered systems.',
+    location: 'Pittsburgh, Pennsylvania',
+    phone: '(412) 320-5240',
+    email: 'bbarathsrinivasan@cmu.edu',
+  },
 };
 
 export const projectsContent = {
-  title: 'Projects',
-  subtitle: 'A collection of things I\'ve built, broken, and rebuilt better.',
+  title: 'Portfolio',
+  subtitle: 'Here are some of my tech projects. Click on the links to view the code on GitHub.',
   emptyState: 'No projects found. Try adjusting your filters.',
   filterLabel: 'Filter by:',
 };
 
 export const contactContent = {
-  title: "Let's Connect",
-  subtitle: "Whether you want to discuss a project, talk tech, or debate tabs vs spaces, I'm all ears.",
+  title: "Contact",
+  subtitle: "Need to reach me urgently? Send a carrier pigeon, smoke signals, or just use the good ol' contact information below!",
+  
+  // Contact details
+  location: 'Pittsburgh, Pennsylvania',
+  email: 'bbarathsrinivasan@cmu.edu',
+  phone: '(412) 320-5240',
   
   // Fun closing lines (randomly selected)
   closingLines: [
@@ -90,7 +146,9 @@ export const funSectionContent = {
 
 export const navItems = [
   { id: 'hero', label: 'Home', icon: '🏠' },
-  { id: 'projects', label: 'Projects', icon: '💼' },
+  { id: 'skills', label: 'Skills', icon: '⚡' },
+  { id: 'resume', label: 'Resume', icon: '📄' },
+  { id: 'projects', label: 'Portfolio', icon: '💼' },
   { id: 'fun', label: 'Explore', icon: '🎮' },
   { id: 'contact', label: 'Contact', icon: '📬' },
 ];

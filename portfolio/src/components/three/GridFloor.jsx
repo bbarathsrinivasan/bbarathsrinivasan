@@ -6,7 +6,7 @@ import * as THREE from 'three';
  * Animated grid floor with perspective
  * Creates the futuristic "tron-like" ground effect
  */
-export function GridFloor({ color = '#ff6b00', opacity = 0.3 }) {
+export function GridFloor({ color = '#ff6b00', opacity = 0.18 }) {
   const gridRef = useRef();
   const materialRef = useRef();
 

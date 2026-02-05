@@ -47,16 +47,16 @@ function SceneContent({ scrollProgress }) {
     <>
       <CameraController scrollProgress={scrollProgress} />
       
-      {/* Lighting */}
-      <ambientLight intensity={0.2} />
-      <directionalLight position={[10, 10, 5]} intensity={0.5} color="#fff" />
-      <pointLight position={[-10, -10, -10]} intensity={0.3} color="#ff6b00" />
-      <pointLight position={[10, 10, 10]} intensity={0.2} color="#ffbf00" />
+      {/* Lighting (softened) */}
+      <ambientLight intensity={0.12} />
+      <directionalLight position={[10, 12, 6]} intensity={0.35} color="#ffffff" />
+      <pointLight position={[-10, -8, -10]} intensity={0.18} color="#ff6b00" />
+      <pointLight position={[10, 8, 10]} intensity={0.16} color="#f5b942" />
       
       {/* 3D Elements */}
-      <ParticleField count={600} color="#ff6b00" />
+      <ParticleField count={360} color="#ff6b00" />
       <FloatingGeometry scrollProgress={scrollProgress} />
-      <GridFloor color="#ff6b00" opacity={0.2} />
+      <GridFloor color="#ff6b00" opacity={0.18} />
       
       {/* Environment for reflections */}
       <Environment preset="night" />

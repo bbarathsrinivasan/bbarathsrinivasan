@@ -75,7 +75,7 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          <h2 className="section-title">{projectsContent.title}</h2>
+          <h2 className="section-title"><code>{projectsContent.title}</code></h2>
           <p className="section-subtitle">{projectsContent.subtitle}</p>
         </motion.header>
 
