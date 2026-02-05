@@ -135,25 +135,64 @@ export function FunSection() {
             </span>
           </div>
 
-          {/* Token field */}
+          {/* Token field - shows tokens, then complete overlay, then secret project in same region */}
           <div className="fun-section__token-field">
-            <AnimatePresence>
-              {tokens.map(token => (
-                <Token key={token.id} token={token} />
-              ))}
-            </AnimatePresence>
+            {!showSecret && (
+              <>
+                <AnimatePresence>
+                  {tokens.map(token => (
+                    <Token key={token.id} token={token} />
+                  ))}
+                </AnimatePresence>
 
-            {/* Game complete overlay */}
+                {/* Game complete overlay */}
+                <AnimatePresence>
+                  {gameComplete && (
+                    <motion.div 
+                      className="fun-section__complete"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <span className="fun-section__complete-icon">🎉</span>
+                      <p>{funSectionContent.game.complete}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </>
+            )}
+
+            {/* Secret project revealed in this region */}
             <AnimatePresence>
-              {gameComplete && (
+              {showSecret && (
                 <motion.div 
-                  className="fun-section__complete"
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  className="fun-section__secret fun-section__secret-inline glass-card"
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 100 }}
                 >
-                  <span className="fun-section__complete-icon">🎉</span>
-                  <p>{funSectionContent.game.complete}</p>
+                  <div className="fun-section__secret-badge">🔓 Secret Unlocked</div>
+                  <h3 className="fun-section__secret-title">Narvyn</h3>
+                  <p className="fun-section__secret-desc">
+                    Your secure gateway to AI agents. Connect powerful agents to your apps with full control—email triage, meeting scheduling, trip planning, and more. End-to-end encrypted, no training on your data.
+                  </p>
+                  <div className="fun-section__secret-tech">
+                    <span>🔒 Secure</span>
+                    <span>🤖 AI Agents</span>
+                    <span>✓ One-click revoke</span>
+                  </div>
+                  <a
+                    href="https://narvyn-waitlist.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="fun-section__secret-link"
+                  >
+                    Visit Narvyn →
+                  </a>
+                  <p className="fun-section__secret-note">
+                    <em>Thanks for exploring! Early access starts March 2026.</em>
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -172,34 +211,6 @@ export function FunSection() {
             </motion.button>
           )}
         </motion.div>
-
-        {/* Secret Project Reveal */}
-        <AnimatePresence>
-          {showSecret && (
-            <motion.div 
-              className="fun-section__secret glass-card"
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ type: 'spring', stiffness: 100 }}
-            >
-              <div className="fun-section__secret-badge">🔓 Secret Unlocked</div>
-              <h3 className="fun-section__secret-title">Project Phantom</h3>
-              <p className="fun-section__secret-desc">
-                A top-secret AI experiment that generates code while you sleep. 
-                Currently at 2 AM debugging level of consciousness.
-              </p>
-              <div className="fun-section__secret-tech">
-                <span>🧪 Experimental</span>
-                <span>🤖 GPT-5</span>
-                <span>☕ Lots of Coffee</span>
-              </div>
-              <p className="fun-section__secret-note">
-                <em>Thanks for exploring! You clearly have good taste in Easter eggs.</em>
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Guide Character */}
         <GuideCharacter collected={collected} totalTokens={totalTokens} />

@@ -103,13 +103,6 @@ export function Contact() {
               <a href={`mailto:${contactContent.email}`}>{contactContent.email}</a>
             </div>
           </div>
-          <div className="contact__info-item">
-            <div className="contact__info-icon">📞</div>
-            <div>
-              <h4>Call:</h4>
-              <a href={`tel:${contactContent.phone}`}>{contactContent.phone}</a>
-            </div>
-          </div>
         </motion.div>
 
         {/* Social Links */}
@@ -146,21 +139,27 @@ export function Contact() {
           {closingLine}
         </motion.p>
 
-        {/* Footer credits */}
-        <motion.div className="contact__footer" variants={itemVariants}>
-          <p className="contact__copyright">
-            © {new Date().getFullYear()} {personalInfo.name}. Built with 
-            <span className="contact__heart"> ⚡ </span>
-            and lots of 
-            <span className="contact__coffee"> ☕</span>
-          </p>
-          <p className="contact__tech">
-            React • Three.js • Framer Motion
-          </p>
-        </motion.div>
-
         {/* Decorative gradient */}
         <div className="contact__decoration" aria-hidden="true" />
+      </motion.div>
+
+      {/* Footer credits - full width at bottom */}
+      <motion.div 
+        className="contact__footer" 
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <p className="contact__copyright">
+          © {new Date().getFullYear()} {personalInfo.name}. Built with 
+          <span className="contact__heart"> ⚡ </span>
+          and lots of 
+          <span className="contact__coffee"> ☕</span>
+        </p>
+        <p className="contact__tech">
+          React • Three.js • Framer Motion
+        </p>
       </motion.div>
     </footer>
   );

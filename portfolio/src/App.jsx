@@ -51,10 +51,10 @@ import './styles/global.css';
 function App() {
   const { scrollProgress, activeSection } = useScrollProgress([
     'hero',
+    'fun',
     'skills',
     'resume',
-    'projects', 
-    'fun',
+    'projects',
     'contact'
   ]);
 
@@ -82,6 +82,9 @@ function App() {
         {/* Hero / Intro Section */}
         <Hero onNavigate={handleNavigate} />
         
+        {/* Interactive Fun Section */}
+        <FunSection />
+        
         {/* Skills Section */}
         <Skills />
         
@@ -90,9 +93,6 @@ function App() {
         
         {/* Projects Section */}
         <Projects />
-        
-        {/* Interactive Fun Section */}
-        <FunSection />
         
         {/* Contact / Footer */}
         <Contact />

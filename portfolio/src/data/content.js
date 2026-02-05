@@ -12,12 +12,12 @@ export const personalInfo = {
   role: 'Research Fellow & Software Engineer',
   tagline: 'Compiling dreams into production-ready reality',
   
-  // Fun rotating subtitles for hero
+  // Fun rotating subtitles for hero (first one shown on load)
   rotatingTitles: [
+    'Building the future, one commit at a time',
     'Research Fellow',
     'Software Engineer',
     'AI Safety Researcher',
-    'Building the future, one commit at a time',
     'Turning caffeine into code since forever',
   ],
   

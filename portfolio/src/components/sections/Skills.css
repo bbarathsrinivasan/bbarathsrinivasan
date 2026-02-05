@@ -1,5 +1,13 @@
-.skills {
+.skills.section {
   position: relative;
+  min-height: auto !important;
+  justify-content: flex-start;
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+}
+
+.skills .section-title {
+  margin-bottom: var(--space-2);
 }
 
 .skills__content {
@@ -11,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.5rem;
-  margin-top: 3rem;
+  margin-top: var(--space-3);
 }
 
 .skills__card {
