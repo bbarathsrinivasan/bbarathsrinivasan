@@ -1,0 +1,217 @@
+/* ===================
+   HERO SECTION STYLES
+   =================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--space-20);
+}
+
+.hero__content {
+  text-align: center;
+  max-width: 900px;
+  z-index: 10;
+}
+
+/* Greeting text */
+.hero__greeting {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--orange-400);
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+}
+
+/* Name styling */
+.hero__name {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: 700;
+  line-height: var(--leading-none);
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.hero__name-first {
+  color: var(--text-primary);
+}
+
+.hero__name-last {
+  background: var(--gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 30px var(--neon-orange-glow));
+}
+
+/* Role */
+.hero__role {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Rotating tagline */
+.hero__tagline-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+}
+
+.hero__tagline-bracket {
+  color: var(--orange-500);
+  font-weight: 600;
+}
+
+.hero__tagline {
+  color: var(--text-secondary);
+  min-width: 300px;
+  text-align: center;
+}
+
+/* Bio */
+.hero__bio {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 60ch;
+  margin: 0 auto var(--space-10);
+}
+
+/* CTA buttons */
+.hero__cta-group {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-16);
+}
+
+.hero__cta {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);
+}
+
+.btn__icon {
+  font-size: 1.2em;
+}
+
+/* Scroll indicator */
+.hero__scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.hero__scroll-indicator:hover {
+  color: var(--orange-400);
+}
+
+.hero__scroll-text {
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.hero__scroll-arrow {
+  opacity: 0.6;
+}
+
+/* Decorative elements */
+.hero__decoration {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--gradient-orange-radial);
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero__decoration--left {
+  top: 20%;
+  left: -100px;
+}
+
+.hero__decoration--right {
+  bottom: 20%;
+  right: -100px;
+}
+
+/* ===================
+   RESPONSIVE STYLES
+   =================== */
+
+@media (max-width: 768px) {
+  .hero__name {
+    font-size: var(--text-4xl);
+  }
+  
+  .hero__role {
+    font-size: var(--text-xl);
+  }
+  
+  .hero__tagline-wrapper {
+    font-size: var(--text-sm);
+  }
+  
+  .hero__tagline {
+    min-width: 200px;
+  }
+  
+  .hero__bio {
+    font-size: var(--text-base);
+  }
+  
+  .hero__cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero__cta {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: var(--space-16);
+  }
+  
+  .hero__greeting {
+    font-size: var(--text-base);
+  }
+  
+  .hero__name {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero__decoration {
+    width: 200px;
+    height: 200px;
+  }
+}

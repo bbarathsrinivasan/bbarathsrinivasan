@@ -1,0 +1,233 @@
+/* ===================
+   CONTACT SECTION STYLES
+   =================== */
+
+.contact {
+  min-height: 80vh;
+  padding: var(--space-24) 0 var(--space-12);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__container {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.contact__header {
+  margin-bottom: var(--space-12);
+}
+
+.contact__header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* Email CTA */
+.contact__email {
+  margin-bottom: var(--space-12);
+}
+
+.contact__email-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.contact__email-link:hover {
+  border-color: var(--orange-500);
+  box-shadow: var(--glow-orange-md);
+  text-decoration: none;
+}
+
+.contact__email-icon {
+  font-size: 2.5rem;
+}
+
+.contact__email-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.contact__email-cta {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--orange-400);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+/* Social Links */
+.contact__social {
+  margin-bottom: var(--space-16);
+}
+
+.contact__social-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-6);
+}
+
+.contact__social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.contact__social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  color: var(--text-secondary);
+  text-decoration: none;
+  min-width: 100px;
+  transition: all var(--transition-normal);
+}
+
+.contact__social-link:hover {
+  color: var(--orange-400);
+  border-color: var(--orange-500);
+  box-shadow: var(--glow-orange-sm);
+  text-decoration: none;
+}
+
+.contact__social-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.contact__social-link:hover svg {
+  transform: scale(1.1);
+}
+
+.contact__social-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+/* Closing line */
+.contact__closing {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--text-secondary);
+  max-width: 50ch;
+  margin: 0 auto var(--space-16);
+  padding: var(--space-6);
+  border-left: 3px solid var(--orange-500);
+  text-align: left;
+}
+
+/* Footer */
+.contact__footer {
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--glass-border);
+}
+
+.contact__copyright {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.contact__heart {
+  color: var(--orange-500);
+}
+
+.contact__coffee {
+  display: inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+
+.contact__tech {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  letter-spacing: var(--tracking-wider);
+}
+
+/* Decorative gradient */
+.contact__decoration {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(255, 107, 0, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===================
+   RESPONSIVE STYLES
+   =================== */
+
+@media (max-width: 768px) {
+  .contact {
+    padding: var(--space-16) 0 var(--space-8);
+  }
+  
+  .contact__email-link {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .contact__email-text {
+    font-size: var(--text-lg);
+  }
+  
+  .contact__social-links {
+    gap: var(--space-3);
+  }
+  
+  .contact__social-link {
+    min-width: 80px;
+    padding: var(--space-3);
+  }
+  
+  .contact__closing {
+    font-size: var(--text-base);
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact__email-icon {
+    font-size: 2rem;
+  }
+  
+  .contact__email-text {
+    font-size: var(--text-base);
+  }
+  
+  .contact__social-link {
+    min-width: 70px;
+  }
+  
+  .contact__social-name {
+    font-size: 0.65rem;
+  }
+}
