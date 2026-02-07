@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { skillsContent } from '../../data/content';
 import { skills } from '../../data/skills';
+import { Icon } from '../ui/Icon';
 import './Skills.css';
 
 /** Oscillating display value around level (speedometer-style "live" reading) */
@@ -39,7 +40,7 @@ function SkillCard({ skill, index, itemVariants }) {
     >
       <header className="skills__card-header">
         <span className="skills__card-icon" aria-hidden="true">
-          {skill.icon}
+          <Icon name={skill.icon} size={22} className="skills__card-icon-svg" />
         </span>
         <h3 className="skills__card-title">{skill.title}</h3>
       </header>
@@ -49,7 +50,7 @@ function SkillCard({ skill, index, itemVariants }) {
           <span key={tag.name} className="skills__tag">
             {tag.icon && (
               <span className="skills__tag-icon" aria-hidden="true">
-                {tag.icon}
+                <Icon name={tag.icon} size={14} className="skills__tag-icon-svg" />
               </span>
             )}
             <span className="skills__tag-name">{tag.name}</span>

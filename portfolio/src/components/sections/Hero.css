@@ -95,7 +95,10 @@
 }
 
 .btn__icon {
-  font-size: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
 }
 
 /* ----- Terminal: code-style about me + typing, fixed height from start ----- */

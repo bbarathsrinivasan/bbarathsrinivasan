@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { projects, categories } from '../../data/projects';
 import { projectsContent } from '../../data/content';
 import { ProjectCard } from '../ui/ProjectCard';
+import { Icon } from '../ui/Icon';
 import './Projects.css';
 
 /**
@@ -99,7 +100,7 @@ export function Projects() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="filter-chip__icon">{category.icon}</span>
+              <span className="filter-chip__icon"><Icon name={category.icon} size={18} /></span>
               <span className="filter-chip__label">{category.label}</span>
               {activeFilter === category.id && (
                 <motion.span 
@@ -136,7 +137,7 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
               >
-                <span className="projects__empty-icon">🔍</span>
+                <span className="projects__empty-icon"><Icon name="search" size={40} /></span>
                 <p>{projectsContent.emptyState}</p>
               </motion.div>
             )}

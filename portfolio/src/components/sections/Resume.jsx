@@ -3,6 +3,7 @@ import { resumeContent } from '../../data/content';
 import { experience, education, publications, projects, leadershipRoles } from '../../data/resume';
 import { skills } from '../../data/skills';
 import { personalInfo } from '../../data/content';
+import { Icon } from '../ui/Icon';
 import './Resume.css';
 
 /**
@@ -53,11 +54,11 @@ export function Resume() {
             <h1 className="resume__name">{personalInfo.name.toUpperCase()}</h1>
             <div className="resume__contact">
               <span>{personalInfo.personalDetails.email}</span>
-              <span>•</span>
+              <span className="resume__bullet"><Icon name="circle" size={4} /></span>
               <a href={personalInfo.personalDetails.website} target="_blank" rel="noopener noreferrer" className="resume__link">Portfolio</a>
-              <span>•</span>
+              <span className="resume__bullet"><Icon name="circle" size={4} /></span>
               <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="resume__link">LinkedIn</a>
-              <span>•</span>
+              <span className="resume__bullet"><Icon name="circle" size={4} /></span>
               <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="resume__link">GitHub</a>
             </div>
           </motion.div>
@@ -104,7 +105,7 @@ export function Resume() {
                     <p className="resume__skills-list">
                       {skill.tags.map((tag, idx) => (
                         <span key={tag.name}>
-                          {tag.icon && <span className="resume__skill-icon">{tag.icon}</span>}
+                          {tag.icon && <span className="resume__skill-icon"><Icon name={tag.icon} size={14} /></span>}
                           {tag.name}
                           {idx < skill.tags.length - 1 && ', '}
                         </span>

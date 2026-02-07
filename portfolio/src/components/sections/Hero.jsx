@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { personalInfo, heroContent } from '../../data/content';
+import { Icon } from '../ui/Icon';
 import './Hero.css';
 
 const TYPING_SPEED_MS = 18;
@@ -114,7 +115,7 @@ export function Hero({ onNavigate }) {
             onClick={() => onNavigate?.('projects')}
             aria-label="View my projects"
           >
-            <span className="btn__icon">⚡</span>
+            <span className="btn__icon"><Icon name="zap" size={18} /></span>
             {heroContent.ctaPrimary}
           </button>
           <button
@@ -123,7 +124,7 @@ export function Hero({ onNavigate }) {
             onClick={() => onNavigate?.('contact')}
             aria-label="Contact me"
           >
-            <span className="btn__icon">💬</span>
+            <span className="btn__icon"><Icon name="message-circle" size={18} /></span>
             {heroContent.ctaSecondary}
           </button>
         </MotionDiv>

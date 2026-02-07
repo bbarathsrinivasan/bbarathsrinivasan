@@ -1,4 +1,4 @@
-/* Custom cursor - rocket design when .custom-cursor-active is on body */
+/* Custom cursor - Lucide rocket pointer when .custom-cursor-active is on body */
 .custom-cursor {
   position: fixed;
   left: var(--cursor-x, -100px);
@@ -7,8 +7,8 @@
   height: 0;
   pointer-events: none;
   z-index: 9999;
-  /* Nose of rocket at cursor position (path starts at 0,0) */
-  transform: none;
+  /* Rocket flipped so tip is left; nose is at (2,2) in flipped viewBox — shift so tip is at cursor */
+  transform: translate(-2px, -2px);
   transition: opacity 0.2s ease;
 }
 
@@ -19,65 +19,39 @@
 .custom-cursor__rocket {
   width: 24px;
   height: 24px;
+  color: var(--orange-500);
   filter: drop-shadow(0 0 4px var(--neon-orange-glow));
-  transition: transform 0.15s ease-out, filter 0.2s ease;
+  transform: scaleX(-1); /* tip on left */
+  transition: transform 0.15s ease-out, color 0.2s ease, filter 0.2s ease;
 }
 
-.custom-cursor__rocket-body {
-  fill: var(--orange-500);
-  stroke: var(--orange-700);
-  transition: fill 0.2s ease, stroke 0.2s ease;
-}
-
-.custom-cursor__rocket-window {
-  fill: var(--orange-400);
-  stroke: var(--orange-700);
-  transition: fill 0.2s ease, stroke 0.2s ease;
-}
-
-.custom-cursor__rocket-window-line {
-  stroke: var(--orange-700);
-  transition: stroke 0.2s ease;
-}
-
-.custom-cursor__rocket-flame {
-  fill: var(--amber);
-  stroke: var(--orange-700);
-  filter: drop-shadow(0 0 2px var(--amber-glow));
-  transition: fill 0.2s ease, stroke 0.2s ease;
-}
-
-.custom-cursor__rocket-flame-lines {
-  stroke: var(--orange-700);
-  transition: stroke 0.2s ease;
+/* Subtle white fill so rocket is visible on any background */
+.custom-cursor__rocket path {
+  fill: rgba(255, 255, 255, 0.28);
+  stroke: currentColor;
 }
 
 .custom-cursor--hover .custom-cursor__rocket {
-  filter: drop-shadow(0 0 6px var(--amber-glow));
-  transform: scale(1.1);
+  color: var(--amber);
+  filter: drop-shadow(0 0 6px var(--amber-glow)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  transform: scaleX(-1) scale(1.1);
 }
 
-.custom-cursor--hover .custom-cursor__rocket-body {
-  fill: var(--orange-400);
-  stroke: var(--orange-600);
+.custom-cursor--hover .custom-cursor__rocket path {
+  fill: rgba(255, 255, 255, 0.55);
+  stroke: currentColor;
 }
 
-.custom-cursor--hover .custom-cursor__rocket-window {
-  fill: var(--orange-300);
-  stroke: var(--orange-600);
+/* Click: bright so rocket stays clearly visible */
+.custom-cursor--active .custom-cursor__rocket {
+  color: var(--orange-400);
+  filter: drop-shadow(0 0 8px var(--neon-orange-glow)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.7));
+  transform: scaleX(-1) scale(0.92);
 }
 
-.custom-cursor--hover .custom-cursor__rocket-window-line {
-  stroke: var(--orange-600);
-}
-
-.custom-cursor--hover .custom-cursor__rocket-flame {
-  fill: var(--neon-orange);
-  stroke: var(--orange-600);
-}
-
-.custom-cursor--hover .custom-cursor__rocket-flame-lines {
-  stroke: var(--orange-600);
+.custom-cursor--active .custom-cursor__rocket path {
+  fill: rgba(255, 255, 255, 0.9);
+  stroke: currentColor;
 }
 
 /* Hide default cursor when custom cursor is active */

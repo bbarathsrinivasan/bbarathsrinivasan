@@ -88,7 +88,10 @@
 }
 
 .nav__link-icon {
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
 }
 
 .nav__link-text {
@@ -209,7 +212,10 @@
 }
 
 .nav__mobile-icon {
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
 }
 
 /* ===================

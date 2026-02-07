@@ -182,8 +182,8 @@ export const projects = [
 ];
 
 export const categories = [
-  { id: 'all', label: 'All', icon: '⚡' },
-  { id: 'Publication', label: 'Publications', icon: '📚' },
-  { id: 'AI/ML', label: 'AI/ML', icon: '🤖' },
-  { id: 'Web', label: 'Web', icon: '🌐' },
+  { id: 'all', label: 'All', icon: 'zap' },
+  { id: 'Publication', label: 'Publications', icon: 'book-open' },
+  { id: 'AI/ML', label: 'AI/ML', icon: 'bot' },
+  { id: 'Web', label: 'Web', icon: 'globe' },
 ];

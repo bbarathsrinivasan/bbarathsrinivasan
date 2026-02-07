@@ -66,8 +66,11 @@
 }
 
 .contact__info-icon {
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  color: var(--orange-500);
 }
 
 .contact__info-item h4 {
@@ -232,18 +235,23 @@
   box-sizing: border-box;
 }
 
-.contact__copyright {
-  font-size: var(--text-base);
-  color: var(--text-primary);
-  margin-bottom: var(--space-2);
-}
-
-.contact__heart {
+.contact__heart,
+.contact__coffee {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
   color: var(--orange-500);
 }
 
 .contact__coffee {
-  display: inline-block;
+  color: var(--amber);
+}
+
+.contact__copyright {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
 }
 
 .contact__tech {

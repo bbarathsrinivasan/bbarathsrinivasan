@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { personalInfo, aboutContent } from '../../data/content';
+import { Icon } from '../ui/Icon';
 import './About.css';
 
 /**
@@ -71,14 +72,14 @@ export function About() {
               <div className="about__details">
                 <div className="about__details-column">
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">🎂</span>
+                    <span className="about__detail-icon"><Icon name="cake" size={20} /></span>
                     <div>
                       <strong>Birthday:</strong>
                       <span>{personalInfo.personalDetails.birthday}</span>
                     </div>
                   </div>
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">🌐</span>
+                    <span className="about__detail-icon"><Icon name="globe" size={20} /></span>
                     <div>
                       <strong>Website:</strong>
                       <a 
@@ -91,14 +92,14 @@ export function About() {
                     </div>
                   </div>
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">📞</span>
+                    <span className="about__detail-icon"><Icon name="phone" size={20} /></span>
                     <div>
                       <strong>Phone:</strong>
                       <span>{personalInfo.personalDetails.phone}</span>
                     </div>
                   </div>
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">📍</span>
+                    <span className="about__detail-icon"><Icon name="map-pin" size={20} /></span>
                     <div>
                       <strong>City:</strong>
                       <span>{personalInfo.personalDetails.city}</span>
@@ -108,21 +109,21 @@ export function About() {
 
                 <div className="about__details-column">
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">🎓</span>
+                    <span className="about__detail-icon"><Icon name="graduation-cap" size={20} /></span>
                     <div>
                       <strong>Age:</strong>
                       <span>{personalInfo.personalDetails.age}</span>
                     </div>
                   </div>
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">🎓</span>
+                    <span className="about__detail-icon"><Icon name="graduation-cap" size={20} /></span>
                     <div>
                       <strong>Degree:</strong>
                       <span>{personalInfo.personalDetails.degree}</span>
                     </div>
                   </div>
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">✉️</span>
+                    <span className="about__detail-icon"><Icon name="mail" size={20} /></span>
                     <div>
                       <strong>Email:</strong>
                       <a href={`mailto:${personalInfo.personalDetails.email}`}>
@@ -131,7 +132,7 @@ export function About() {
                     </div>
                   </div>
                   <div className="about__detail-item">
-                    <span className="about__detail-icon">💼</span>
+                    <span className="about__detail-icon"><Icon name="briefcase" size={20} /></span>
                     <div>
                       <strong>Freelance:</strong>
                       <span>{personalInfo.personalDetails.freelance}</span>

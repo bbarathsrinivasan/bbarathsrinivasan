@@ -145,12 +145,12 @@ export const funSectionContent = {
 };
 
 export const navItems = [
-  { id: 'hero', label: 'Home', icon: '🏠' },
-  { id: 'skills', label: 'Skills', icon: '⚡' },
-  { id: 'resume', label: 'Resume', icon: '📄' },
-  { id: 'projects', label: 'Portfolio', icon: '💼' },
-  { id: 'fun', label: 'Explore', icon: '🎮' },
-  { id: 'contact', label: 'Contact', icon: '📬' },
+  { id: 'hero', label: 'Home', icon: 'home' },
+  { id: 'skills', label: 'Skills', icon: 'zap' },
+  { id: 'resume', label: 'Resume', icon: 'file-text' },
+  { id: 'projects', label: 'Portfolio', icon: 'briefcase' },
+  { id: 'fun', label: 'Explore', icon: 'gamepad-2' },
+  { id: 'contact', label: 'Contact', icon: 'mail' },
 ];
 
 // Easter eggs and fun interactions

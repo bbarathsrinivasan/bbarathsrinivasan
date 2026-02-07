@@ -10,6 +10,7 @@ export function CustomCursor() {
   const [visible, setVisible] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
   const [isHover, setIsHover] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const hasHover = window.matchMedia('(hover: hover)').matches;
@@ -27,15 +28,21 @@ export function CustomCursor() {
 
     const handleLeave = () => setVisible(false);
     const handleEnter = () => setVisible(true);
+    const handleDown = () => setIsActive(true);
+    const handleUp = () => setIsActive(false);
 
     document.addEventListener('mousemove', handleMove);
     document.addEventListener('mouseleave', handleLeave);
     document.addEventListener('mouseenter', handleEnter);
+    document.addEventListener('mousedown', handleDown);
+    document.addEventListener('mouseup', handleUp);
 
     return () => {
       document.removeEventListener('mousemove', handleMove);
       document.removeEventListener('mouseleave', handleLeave);
       document.removeEventListener('mouseenter', handleEnter);
+      document.removeEventListener('mousedown', handleDown);
+      document.removeEventListener('mouseup', handleUp);
     };
   }, [visible]);
 
@@ -49,45 +56,26 @@ export function CustomCursor() {
 
   return (
     <div
-      className={`custom-cursor ${visible ? 'custom-cursor--visible' : ''} ${isHover ? 'custom-cursor--hover' : ''}`}
+      className={`custom-cursor ${visible ? 'custom-cursor--visible' : ''} ${isHover ? 'custom-cursor--hover' : ''} ${isActive ? 'custom-cursor--active' : ''}`}
       style={{ '--cursor-x': `${position.x}px`, '--cursor-y': `${position.y}px` }}
       aria-hidden="true"
     >
       <svg
         className="custom-cursor__rocket"
-        viewBox="0 0 24 24"
-        fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        {/* Rocket like PNG: streamlined teardrop, rounded nose, porthole, outlined flame — neo-orange palette */}
-        <path
-          className="custom-cursor__rocket-body"
-          d="M0 1 Q0 0 2 0 Q5 0 6 2 L7 10 L6 20 L4 24 L2 22 L0 18 L0 10 Z"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="0.55"
-          strokeLinejoin="round"
-        />
-        <circle
-          className="custom-cursor__rocket-window"
-          cx="4"
-          cy="6"
-          r="1.35"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="0.4"
-        />
-        <line className="custom-cursor__rocket-window-line" x1="4" y1="5.15" x2="4" y2="5.55" stroke="currentColor" strokeWidth="0.3" />
-        <line className="custom-cursor__rocket-window-line" x1="4" y1="6.25" x2="4" y2="6.9" stroke="currentColor" strokeWidth="0.3" />
-        <path
-          className="custom-cursor__rocket-flame"
-          d="M2 22 L4 24 L6 22 L5 20 L3 20 Z"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="0.5"
-          strokeLinejoin="round"
-        />
-        <path className="custom-cursor__rocket-flame-lines" d="M3 21.5 L4 23.5 M4 20.5 L4.5 22.5 M5 21.5 L4 23.5" stroke="currentColor" strokeWidth="0.28" fill="none" strokeLinecap="round" />
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+        <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
       </svg>
     </div>
   );

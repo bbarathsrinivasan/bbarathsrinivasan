@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navItems, personalInfo } from '../../data/content';
+import { Icon } from './Icon';
 import './Navigation.css';
 
 /**
@@ -74,7 +75,7 @@ export function Navigation({ activeSection, onNavigate }) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="nav__link-icon">{item.icon}</span>
+                  <span className="nav__link-icon"><Icon name={item.icon} size={18} /></span>
                   <span className="nav__link-text">{item.label}</span>
                   {activeSection === item.id && (
                     <motion.span 
@@ -127,7 +128,7 @@ export function Navigation({ activeSection, onNavigate }) {
                       handleNavClick(item.id);
                     }}
                   >
-                    <span className="nav__mobile-icon">{item.icon}</span>
+                    <span className="nav__mobile-icon"><Icon name={item.icon} size={20} /></span>
                     <span className="nav__mobile-text">{item.label}</span>
                   </a>
                 </motion.li>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { funSectionContent } from '../../data/content';
+import { Icon } from '../ui/Icon';
 import './FunSection.css';
 
 /**
@@ -85,7 +86,7 @@ export function FunSection() {
         aria-label={`Collect token ${token.id + 1}`}
       >
         <span className="fun-token__glow" />
-        <span className="fun-token__core">✦</span>
+        <span className="fun-token__core"><Icon name="sparkles" size={20} /></span>
       </motion.button>
     );
   };
@@ -116,7 +117,7 @@ export function FunSection() {
         >
           {/* Instructions */}
           <div className="fun-section__instructions">
-            <span className="fun-section__instruction-icon">🎮</span>
+            <span className="fun-section__instruction-icon"><Icon name="gamepad-2" size={20} /></span>
             <span>{funSectionContent.game.instructions}</span>
           </div>
 
@@ -154,7 +155,7 @@ export function FunSection() {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <span className="fun-section__complete-icon">🎉</span>
+                      <span className="fun-section__complete-icon"><Icon name="party-popper" size={32} /></span>
                       <p>{funSectionContent.game.complete}</p>
                     </motion.div>
                   )}
@@ -172,15 +173,15 @@ export function FunSection() {
                   exit={{ opacity: 0 }}
                   transition={{ type: 'spring', stiffness: 100 }}
                 >
-                  <div className="fun-section__secret-badge">🔓 Secret Unlocked</div>
+                  <div className="fun-section__secret-badge"><Icon name="lock-open" size={18} /> Secret Unlocked</div>
                   <h3 className="fun-section__secret-title">Narvyn</h3>
                   <p className="fun-section__secret-desc">
                     Your secure gateway to AI agents. Connect powerful agents to your apps with full control—email triage, meeting scheduling, trip planning, and more. End-to-end encrypted, no training on your data.
                   </p>
                   <div className="fun-section__secret-tech">
-                    <span>🔒 Secure</span>
-                    <span>🤖 AI Agents</span>
-                    <span>✓ One-click revoke</span>
+                    <span><Icon name="lock" size={14} /> Secure</span>
+                    <span><Icon name="bot" size={14} /> AI Agents</span>
+                    <span><Icon name="check" size={14} /> One-click revoke</span>
                   </div>
                   <a
                     href="https://narvyn-waitlist.vercel.app/"
@@ -188,7 +189,7 @@ export function FunSection() {
                     rel="noopener noreferrer"
                     className="fun-section__secret-link"
                   >
-                    Visit Narvyn →
+                    Visit Narvyn <Icon name="arrow-right" size={14} />
                   </a>
                   <p className="fun-section__secret-note">
                     <em>Thanks for exploring! Early access starts March 2026.</em>
@@ -257,7 +258,7 @@ function GuideCharacter({ collected, totalTokens }) {
           ease: 'easeInOut',
         }}
       >
-        <span className="guide-character__face">🤖</span>
+        <span className="guide-character__face"><Icon name="bot" size={28} /></span>
         <span className="guide-character__glow" />
       </motion.div>
       
