@@ -28,7 +28,7 @@ export const personalInfo = {
   personalDetails: {
     birthday: '1 Aug 2001',
     age: 23,
-    website: 'https://firaz-bug.github.io/bbarathsrinivasan/',
+    website: 'https://bbarathsrinivasan.vercel.app/',
     phone: '(412) 320-5240',
     city: 'Pittsburgh, Pennsylvania',
     degree: 'Master of Computational Data Science',

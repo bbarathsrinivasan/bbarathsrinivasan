@@ -54,8 +54,6 @@ export function Resume() {
             <div className="resume__contact">
               <span>{personalInfo.personalDetails.email}</span>
               <span>•</span>
-              <span>{personalInfo.personalDetails.phone}</span>
-              <span>•</span>
               <a href={personalInfo.personalDetails.website} target="_blank" rel="noopener noreferrer" className="resume__link">Portfolio</a>
               <span>•</span>
               <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="resume__link">LinkedIn</a>
