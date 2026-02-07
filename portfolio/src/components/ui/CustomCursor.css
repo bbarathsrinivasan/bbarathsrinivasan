@@ -1,0 +1,87 @@
+/* Custom cursor - rocket design when .custom-cursor-active is on body */
+.custom-cursor {
+  position: fixed;
+  left: var(--cursor-x, -100px);
+  top: var(--cursor-y, -100px);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* Nose of rocket at cursor position (path starts at 0,0) */
+  transform: none;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor:not(.custom-cursor--visible) {
+  opacity: 0;
+}
+
+.custom-cursor__rocket {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 4px var(--neon-orange-glow));
+  transition: transform 0.15s ease-out, filter 0.2s ease;
+}
+
+.custom-cursor__rocket-body {
+  fill: var(--orange-500);
+  stroke: var(--orange-700);
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.custom-cursor__rocket-window {
+  fill: var(--orange-400);
+  stroke: var(--orange-700);
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.custom-cursor__rocket-window-line {
+  stroke: var(--orange-700);
+  transition: stroke 0.2s ease;
+}
+
+.custom-cursor__rocket-flame {
+  fill: var(--amber);
+  stroke: var(--orange-700);
+  filter: drop-shadow(0 0 2px var(--amber-glow));
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.custom-cursor__rocket-flame-lines {
+  stroke: var(--orange-700);
+  transition: stroke 0.2s ease;
+}
+
+.custom-cursor--hover .custom-cursor__rocket {
+  filter: drop-shadow(0 0 6px var(--amber-glow));
+  transform: scale(1.1);
+}
+
+.custom-cursor--hover .custom-cursor__rocket-body {
+  fill: var(--orange-400);
+  stroke: var(--orange-600);
+}
+
+.custom-cursor--hover .custom-cursor__rocket-window {
+  fill: var(--orange-300);
+  stroke: var(--orange-600);
+}
+
+.custom-cursor--hover .custom-cursor__rocket-window-line {
+  stroke: var(--orange-600);
+}
+
+.custom-cursor--hover .custom-cursor__rocket-flame {
+  fill: var(--neon-orange);
+  stroke: var(--orange-600);
+}
+
+.custom-cursor--hover .custom-cursor__rocket-flame-lines {
+  stroke: var(--orange-600);
+}
+
+/* Hide default cursor when custom cursor is active */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}

@@ -52,16 +52,16 @@ export const heroContent = {
   ctaPrimary: 'View Projects',
   ctaSecondary: 'Contact Me',
   /** Terminal "about me" — code-style block with typing effect. Use \n for new lines. */
-  terminalAbout: `// TL;DR — the only constant that matters 📌
+  terminalAbout: `// TL;DR
 tld = "I teach machines better manners, design systems with guardrails, and ship with curiosity + discipline. 🚀🛡️🤖"
 
 // education.patch (applying latest updates 🎓)
 masters = "Pursuing my Master's in Computational Data Science at Carnegie Mellon University, where data, systems, and intelligent decision-making all collide (in a good way)."
 
-// builder.module — no bundler required 🔧
+// builder.module
 builder = "I like turning messy, real-world problems into reliable AI products that actually help people."
 
-// ai_safety.guardrails (red-team approved 🛡️)
+// ai_safety.guardrails
 ai_safety = "Think of it as teaching powerful models to be smart, secure, and well-behaved."
 
 // personality.vibe (runtime: always on ⚡)
