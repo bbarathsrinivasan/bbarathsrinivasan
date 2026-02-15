@@ -1,16 +1,14 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**bbarathsrinivasan/bbarathsrinivasan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Hi there 👋
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+# 🚀 Barath Srinivasan
+
+*Building the future, one commit at a time*
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-neo--orange-ff6b00?style=for-the-badge)](https://bbarathsrinivasan.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)](https://github.com/bbarathsrinivasan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/b-barath-srinivasan-4721b220b/)
+
+</div>
