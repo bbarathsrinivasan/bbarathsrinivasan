@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { Scene } from './components/three/Scene';
 import { Navigation } from './components/ui/Navigation';
-import { CustomCursor } from './components/ui/CustomCursor';
 import { Hero } from './components/sections/Hero';
 import { Skills } from './components/sections/Skills';
 import { Resume } from './components/sections/Resume';
@@ -69,7 +68,6 @@ function App() {
 
   return (
     <div className="app">
-      <CustomCursor />
       {/* Three.js Background Scene */}
       <Scene scrollProgress={scrollProgress} />
       
